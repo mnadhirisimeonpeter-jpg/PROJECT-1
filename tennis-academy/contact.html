@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ace Tennis Academy | Contact</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">ACE <span>TENNIS</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="coaching.html">Coaching</a></li>
+        <li class="nav-item"><a class="nav-link" href="schedule.html">Schedule</a></li>
+        <li class="nav-item"><a class="nav-link" href="tournament.html">Tournament</a></li>
+        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item ms-lg-2"><button id="darkModeToggle">🌙 Dark</button></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="container">
+    <span class="hero-tag">Get In Touch</span>
+    <h1>Contact Us</h1>
+    <p>Enrol, register for the tournament, or ask us anything</p>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+    <div class="row g-5">
+
+      <!-- Contact Info -->
+      <div class="col-lg-4 reveal">
+        <span class="section-eyebrow">Find Us</span>
+        <h2 class="section-title">Let's Talk Tennis</h2>
+        <div class="section-divider"></div>
+
+        <div class="info-card">
+          <h5>📍 Location</h5>
+          <p>Sport Complex, Nairobi, Kenya<br>Off Ngong Road, next to the main stadium</p>
+        </div>
+
+        <div class="info-card">
+          <h5>📧 Email</h5>
+          <p>academy@acetennis.co.ke<br>We reply within 24 hours</p>
+        </div>
+
+        <div class="info-card">
+          <h5>📞 Phone</h5>
+          <p>+254 700 000 000<br>Mon–Sat · 7:00 AM – 8:00 PM</p>
+        </div>
+
+        <div class="info-card">
+          <h5>🕐 Office Hours</h5>
+          <p>Monday–Friday: 7:00 AM – 7:00 PM<br>Saturday: 7:00 AM – 12:00 PM<br>Sunday: Closed</p>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="col-lg-8 reveal">
+        <span class="section-eyebrow">Send a Message</span>
+        <h2 class="section-title">Contact Form</h2>
+        <div class="section-divider"></div>
+
+        <form id="contactForm" novalidate>
+          <div class="row g-3">
+
+            <div class="col-md-6">
+              <label for="name" class="form-label">Full Name <span style="color:#dc3545;">*</span></label>
+              <input type="text" id="name" class="form-control" placeholder="e.g. James Kariuki" required aria-required="true" />
+            </div>
+
+            <div class="col-md-6">
+              <label for="email" class="form-label">Email Address <span style="color:#dc3545;">*</span></label>
+              <input type="email" id="email" class="form-control" placeholder="james@email.com" required aria-required="true" />
+            </div>
+
+            <div class="col-md-6">
+              <label for="phone" class="form-label">Phone Number <span style="color:var(--grey); font-weight:400;">(optional)</span></label>
+              <input type="tel" id="phone" class="form-control" placeholder="+254 700 000 000" />
+            </div>
+
+            <div class="col-md-6">
+              <label for="subject" class="form-label">Subject <span style="color:#dc3545;">*</span></label>
+              <select id="subject" class="form-select" required aria-required="true">
+                <option value="">Select a subject…</option>
+                <option value="enrol">Enrol in a Programme</option>
+                <option value="tournament">Tournament Registration</option>
+                <option value="private">Book Private Coaching</option>
+                <option value="fitness">Fitness Programme</option>
+                <option value="general">General Enquiry</option>
+              </select>
+            </div>
+
+            <div class="col-12">
+              <label for="message" class="form-label">Message <span style="color:#dc3545;">*</span></label>
+              <textarea id="message" class="form-control" rows="5" placeholder="Tell us about yourself, your level, and what you're looking for…" required aria-required="true"></textarea>
+            </div>
+
+            <div class="col-12">
+              <button type="submit" class="btn-gold" style="padding: 0.8rem 2.5rem; font-size: 1rem;">Send Message</button>
+            </div>
+
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Map placeholder ── -->
+<section style="padding: 0 0 80px;">
+  <div class="container reveal">
+    <div style="background: linear-gradient(135deg, var(--green-dark), var(--dark)); border-radius: var(--radius); padding: 3rem; text-align: center; color: var(--white);">
+      <div style="font-size: 4rem; margin-bottom: 1rem;">📍</div>
+      <h3 style="color: var(--white);">Sport Complex, Nairobi</h3>
+      <p style="color: rgba(255,255,255,0.7);">Off Ngong Road — easy to find, with ample parking on site.</p>
+      <p style="color: rgba(255,255,255,0.5); font-size: 0.85rem; margin-top: 1rem;">Google Maps integration available — search "Ace Tennis Academy Nairobi"</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section style="background:#f4f7f5; padding-top: 0; padding-bottom: 80px;">
+  <div class="container">
+    <div class="text-center mb-5 reveal">
+      <span class="section-eyebrow">Common Questions</span>
+      <h2 class="section-title">FAQ</h2>
+      <div class="section-divider mx-auto"></div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-8 reveal">
+        <div class="accordion" id="faqAccordion">
+
+          <div class="accordion-item border-0 mb-2" style="border-radius:var(--radius); overflow:hidden;">
+            <h2 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" style="background:#fff; font-weight:600;">
+                Do I need experience to join?
+              </button>
+            </h2>
+            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+              <div class="accordion-body" style="font-size:0.93rem; color:var(--grey);">
+                Not at all. Our Junior Starter and Adult Social programmes are designed for complete beginners. We assess every new member individually and place them in the appropriate group.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item border-0 mb-2" style="border-radius:var(--radius); overflow:hidden;">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" style="background:#fff; font-weight:600;">
+                What equipment do I need to bring?
+              </button>
+            </h2>
+            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body" style="font-size:0.93rem; color:var(--grey);">
+                Tennis shoes (non-marking soles), comfortable sportswear, and a water bottle. Rackets are available to borrow for your first session. We recommend purchasing your own once you enrol.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item border-0 mb-2" style="border-radius:var(--radius); overflow:hidden;">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" style="background:#fff; font-weight:600;">
+                How do I register for the Open Tournament?
+              </button>
+            </h2>
+            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body" style="font-size:0.93rem; color:var(--grey);">
+                Fill in the contact form above and select "Tournament Registration" as the subject. Include your name and current programme level. Deadline is 25 June 2026. Spots are limited to 32 players.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item border-0 mb-2" style="border-radius:var(--radius); overflow:hidden;">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" style="background:#fff; font-weight:600;">
+                Are fitness sessions separate from court training?
+              </button>
+            </h2>
+            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body" style="font-size:0.93rem; color:var(--grey);">
+                Yes. Fitness sessions (Monday and Wednesday, 6:00–7:00 AM) are standalone sessions open to all levels. They run in addition to court training and focus on body-weight circuits, cardio, and agility.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <div class="footer-brand">ACE <span>TENNIS</span></div>
+        <p style="font-size:0.9rem; max-width:280px;">Developing champions on and off the court. Based at the Sport Complex, Nairobi.</p>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h6>Navigate</h6>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="coaching.html">Coaching</a></li>
+          <li><a href="schedule.html">Schedule</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h6>More</h6>
+        <ul class="footer-links">
+          <li><a href="tournament.html">Tournament</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4">
+        <h6>Contact</h6>
+        <p style="font-size:0.9rem;">Sport Complex, Nairobi, Kenya<br>academy@acetennis.co.ke<br>+254 700 000 000</p>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 Ace Tennis Academy. All rights reserved.</div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
