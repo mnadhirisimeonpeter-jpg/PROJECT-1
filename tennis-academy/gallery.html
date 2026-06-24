@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ace Tennis Academy | Gallery</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .gallery-placeholder {
+      width: 100%;
+      aspect-ratio: 4/3;
+      border-radius: var(--radius);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+    .gallery-placeholder:hover { transform: scale(1.02); }
+    .gallery-placeholder .overlay {
+      position: absolute; inset: 0;
+      background: rgba(0,0,0,0.25);
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; transition: opacity 0.3s;
+      font-size: 2rem; color: #fff;
+    }
+    .gallery-placeholder:hover .overlay { opacity: 1; }
+    .gallery-label {
+      position: absolute; bottom: 10px; left: 12px; right: 12px;
+      background: rgba(0,0,0,0.55); color: #fff;
+      font-size: 0.8rem; padding: 4px 8px; border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">ACE <span>TENNIS</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="coaching.html">Coaching</a></li>
+        <li class="nav-item"><a class="nav-link" href="schedule.html">Schedule</a></li>
+        <li class="nav-item"><a class="nav-link" href="tournament.html">Tournament</a></li>
+        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item ms-lg-2"><button id="darkModeToggle">🌙 Dark</button></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="container">
+    <span class="hero-tag">Photo Gallery</span>
+    <h1>Gallery</h1>
+    <p>Training sessions, tournaments, and academy life</p>
+  </div>
+</div>
+
+<!-- ── Filter Buttons ── -->
+<section style="padding: 40px 0 0;">
+  <div class="container text-center reveal">
+    <div class="d-flex flex-wrap justify-content-center gap-2">
+      <button class="btn-gold active" data-filter="all">All</button>
+      <button class="btn-outline-gold" data-filter="training">Training</button>
+      <button class="btn-outline-gold" data-filter="tournament">Tournament</button>
+      <button class="btn-outline-gold" data-filter="fitness">Fitness</button>
+      <button class="btn-outline-gold" data-filter="team">Team</button>
+    </div>
+  </div>
+</section>
+
+<!-- ── Gallery Grid ── -->
+<section>
+  <div class="container">
+    <div class="row g-3" id="galleryGrid">
+
+      <!-- Training -->
+      <div class="col-sm-6 col-md-4 col-lg-3 reveal gallery-item" data-category="training">
+        <div class="gallery-placeholder" style="background: linear-gradient(135deg, #1B4332, #2D6A4F);">
+          <div style="font-size:4rem;">🎾</div>
+          <div style="font-size:0.9rem; color:rgba(255,255,255,0.8); margin-top:0.5rem;">Forehand Drills</div>
+          <div class="gallery-label">Training · Court 1</div>
+          <div class="overlay">🔍</div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-4 col-lg-3 reveal gallery-item" data-category="training">
+        <div class="gallery-placeholder" style="background: linear-gradient(135deg, #0D1B2A, #1B4332);">
+          <div style="font-size:4rem;">🏃</div>
+          <div style="font-size:0.9rem; color:rgba(255,255,255,0.8); margin-top:0.5rem;">Footwork Session</div>
+          <div class="gallery-label">Training · Court 2</div>
+          <div class="overlay">🔍</div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-4 col-lg-3 reveal gallery-item" data-category="training">
+        <div class="gallery-placeholder" style="background: linear-gradient(135deg, #2D6A4F, #52b788);">
+          <div style="font-size:4rem;">🎯</div>
+          <div style="font-size:0.9rem; color:rgba(255,255,255,0.8); margin-top:0.5rem;">Serve Practice</div>
+          <div class="gallery-label">Training · Morning Session</div>
+          <div class="overlay">🔍</div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-4 col-lg-3 reveal gallery-item" data-category="training">
+        <div class="gallery-placeholder" style="background: linear-gradient(135deg, #1B4332, #0D1B2A);">
+          <div style="font-size:4rem;">🎾</div>
+          <div style="font-size:0.9rem; color:rgba(255,255,255,0.8); margin-top:0.5rem;">Backhand Technique</div>
+          <div class="gallery-label">Training · Academy Squad</div>
+          <div class="overlay">🔍</div>
+        </div>
+      </div>
+
+      <!-- Tournament -->
+      <div class="col-sm-6 col-md-4 col-lg-3 reveal gallery-item" data-category="tournament">
+        <div class="gallery-placeholder" style="background: linear-gradient(135deg, #7d6608, #E9C46A);">
+          <div style="font-size:4rem;">🏆</div>
+          <div style="font-size:0.9rem; color:rgba(0,0,0,0.7); margin-top:0.5rem;">2025 Open Final</div>
+          <div class="gallery-label">Tournament · Final · 2025</div>
+          <div class="overlay">🔍</div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-4 col-lg-3 reveal gallery-item" data-category="tournament">
+        <div class="gallery-placeholder" style="background: linear-gradient(135deg, #E9C46A, #f4a261);">
+          <div style="font-size:4rem;">🥇</div>
+          <div style="font-size:0.9rem; color:rgba(0,0,0,0.7); margin-top:0.5rem;">Prize Giving</div>
+          <div class="gallery-label">Tournament · Awards · 2025</div>
+          <div class="overlay">🔍</div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-4 col-lg-3 reveal gallery-item" data-category="tournament">
+        <div class="gallery-placeholder" style="background: linear-gradient(135deg, #2b2d42, #8d99ae);">
+          <div style="font-size:4rem;">⚡</div>
+          <div style="font-size:0.9rem; color:rgba(255,255,255,0.8); margin-top:0.5rem;">Quarter-Final Action</div>
+          <div class="gallery-label">Tournament · QF · 2025</div>
+          <div class="overlay">🔍</div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-4 col-lg-3 reveal gallery-item" data-category="tournament">
+        <div class="gallery-placeholder" style="background: linear-gradient(135deg, #5c4a8a, #7b2d8b);">
+          <div style="font-size:4rem;">🎾</div>
+          <div style="font-size:0.9rem; color:rgba(255,255,255,0.8); margin-top:0.5rem;">Group Stage</div>
+          <div class="gallery-label">Tournament · Groups · 2025</div>
+          <div class="overlay">🔍</div>
+        </div>
+      </div>
+
+      <!-- Fitness -->
+      <div class="col-sm-6 col-md-4 col-lg-3 reveal gallery-item" data-category="fitness">
+        <div class="gallery-placeholder" style="background: linear-gradient(135deg, #c0392b, #e74c3c);">
+          <div style="font-size:4rem;">💪</div>
+          <div style="font-size:0.9rem; color:rgba(255,255,255,0.8); margin-top:0.5rem;">Body-Weight Circuits</div>
+          <div class="gallery-label">Fitness · Monday Session</div>
+          <div class="overlay">🔍</div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-4 col-lg-3 reveal gallery-item" data-category="fitness">
+        <div class="gallery-placeholder" style="background: linear-gradient(135deg, #e74c3c, #f39c12);">
+          <div style="font-size:4rem;">🏃‍♀️</div>
+          <div style="font-size:0.9rem; color:rgba(255,255,255,0.8); margin-top:0.5rem;">Cardio Conditioning</div>
+          <div class="gallery-label">Fitness · Wednesday Session</div>
+          <div class="overlay">🔍</div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-4 col-lg-3 reveal gallery-item" data-category="fitness">
+        <div class="gallery-placeholder" style="background: linear-gradient(135deg, #f39c12, #c0392b);">
+          <div style="font-size:4rem;">🧘</div>
+          <div style="font-size:0.9rem; color:rgba(255,255,255,0.8); margin-top:0.5rem;">Core & Stability</div>
+          <div class="gallery-label">Fitness · Sport Complex</div>
+          <div class="overlay">🔍</div>
+        </div>
+      </div>
+
+      <!-- Team -->
+      <div class="col-sm-6 col-md-4 col-lg-3 reveal gallery-item" data-category="team">
+        <div class="gallery-placeholder" style="background: linear-gradient(135deg, #0D1B2A, #2c3e50);">
+          <div style="font-size:4rem;">👥</div>
+          <div style="font-size:0.9rem; color:rgba(255,255,255,0.8); margin-top:0.5rem;">Academy Squad Photo</div>
+          <div class="gallery-label">Team · 2025</div>
+          <div class="overlay">🔍</div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-4 col-lg-3 reveal gallery-item" data-category="team">
+        <div class="gallery-placeholder" style="background: linear-gradient(135deg, #1B4332, #0D1B2A);">
+          <div style="font-size:4rem;">🤝</div>
+          <div style="font-size:0.9rem; color:rgba(255,255,255,0.8); margin-top:0.5rem;">Coaching Staff</div>
+          <div class="gallery-label">Team · Coaches 2026</div>
+          <div class="overlay">🔍</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <div class="footer-brand">ACE <span>TENNIS</span></div>
+        <p style="font-size:0.9rem; max-width:280px;">Developing champions on and off the court. Based at the Sport Complex, Nairobi.</p>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h6>Navigate</h6>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="coaching.html">Coaching</a></li>
+          <li><a href="schedule.html">Schedule</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h6>More</h6>
+        <ul class="footer-links">
+          <li><a href="tournament.html">Tournament</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4">
+        <h6>Contact</h6>
+        <p style="font-size:0.9rem;">Sport Complex, Nairobi, Kenya<br>academy@acetennis.co.ke<br>+254 700 000 000</p>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 Ace Tennis Academy. All rights reserved.</div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
