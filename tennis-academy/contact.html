@@ -9,6 +9,7 @@
 </head>
 <body>
 
+<!-- navbar -->
 <nav class="navbar navbar-expand-lg sticky-top">
   <div class="container">
     <a class="navbar-brand" href="index.html">ACE <span>TENNIS</span></a>
@@ -38,11 +39,12 @@
   </div>
 </div>
 
+<!-- contact — info cards on left, form on right -->
 <section>
   <div class="container">
     <div class="row g-5">
 
-      <!-- Contact Info -->
+      <!-- contact info -->
       <div class="col-lg-4 reveal">
         <span class="section-eyebrow">Find Us</span>
         <h2 class="section-title">Let's Talk Tennis</h2>
@@ -69,7 +71,9 @@
         </div>
       </div>
 
-      <!-- Contact Form -->
+      <!-- contact form
+           novalidate disables the browser default validation so we can use
+           our own styled errors from main.js instead -->
       <div class="col-lg-8 reveal">
         <span class="section-eyebrow">Send a Message</span>
         <h2 class="section-title">Contact Form</h2>
@@ -122,11 +126,11 @@
   </div>
 </section>
 
-<!-- ── Map placeholder ── -->
+<!-- map placeholder — would swap this for an actual google maps iframe later -->
 <section style="padding: 0 0 80px;">
   <div class="container reveal">
     <div style="background: linear-gradient(135deg, var(--green-dark), var(--dark)); border-radius: var(--radius); padding: 3rem; text-align: center; color: var(--white);">
-      <div style="font-size: 4rem; margin-bottom: 1rem;">📍</div>
+      <img src="images/gallery/ball-on-court.jpg" alt="Tennis ball on court" style="width:120px; height:120px; object-fit:cover; border-radius:50%; margin: 0 auto 1rem; display:block; border: 3px solid var(--gold);">
       <h3 style="color: var(--white);">Sport Complex, Nairobi</h3>
       <p style="color: rgba(255,255,255,0.7);">Off Ngong Road — easy to find, with ample parking on site.</p>
       <p style="color: rgba(255,255,255,0.5); font-size: 0.85rem; margin-top: 1rem;">Google Maps integration available — search "Ace Tennis Academy Nairobi"</p>
@@ -134,7 +138,8 @@
   </div>
 </section>
 
-<!-- ── FAQ ── -->
+<!-- FAQ — bootstrap accordion, only one item open at a time
+     data-bs-parent links them so opening one closes the rest -->
 <section style="background:#f4f7f5; padding-top: 0; padding-bottom: 80px;">
   <div class="container">
     <div class="text-center mb-5 reveal">
@@ -204,6 +209,7 @@
   </div>
 </section>
 
+<!-- footer -->
 <footer>
   <div class="container">
     <div class="row g-4">
