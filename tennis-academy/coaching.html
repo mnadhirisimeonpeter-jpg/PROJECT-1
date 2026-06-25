@@ -9,6 +9,7 @@
 </head>
 <body>
 
+<!-- navbar -->
 <nav class="navbar navbar-expand-lg sticky-top">
   <div class="container">
     <a class="navbar-brand" href="index.html">ACE <span>TENNIS</span></a>
@@ -38,7 +39,7 @@
   </div>
 </div>
 
-<!-- ── Search Filter ── -->
+<!-- search bar — JS in main.js filters the programme cards as you type -->
 <section style="padding: 40px 0 0;">
   <div class="container">
     <div class="row justify-content-center">
@@ -50,7 +51,8 @@
   </div>
 </section>
 
-<!-- ── Programmes ── -->
+<!-- programme cards — each one has a coloured header and white body
+     col-md-6 col-lg-4 = 1 col mobile, 2 tablet, 3 desktop -->
 <section>
   <div class="container">
     <div class="text-center mb-5 reveal">
@@ -60,9 +62,10 @@
     </div>
     <div class="row g-4">
 
-      <!-- Junior Starter -->
+      <!-- junior starter -->
       <div class="col-md-6 col-lg-4 reveal">
         <div class="programme-card">
+          <img src="images/gallery/junior-forehand.jpg" alt="Junior player hitting a forehand" style="width:100%; height:180px; object-fit:cover;">
           <div class="programme-card-header">
             <span class="badge bg-success mb-2">Beginner</span>
             <h3>Junior Starter</h3>
@@ -85,9 +88,10 @@
         </div>
       </div>
 
-      <!-- Academy Squad -->
+      <!-- academy squad -->
       <div class="col-md-6 col-lg-4 reveal">
         <div class="programme-card">
+          <img src="images/gallery/backhand-feed.jpg" alt="Backhand from a fed ball in training" style="width:100%; height:180px; object-fit:cover;">
           <div class="programme-card-header" style="background: var(--green-mid);">
             <span class="badge mb-2" style="background:var(--gold); color:var(--dark);">Intermediate</span>
             <h3>Academy Squad</h3>
@@ -110,9 +114,10 @@
         </div>
       </div>
 
-      <!-- Performance Track -->
+      <!-- performance track -->
       <div class="col-md-6 col-lg-4 reveal">
         <div class="programme-card">
+          <img src="images/gallery/elite-movement.jpg" alt="Elite player explosive court movement" style="width:100%; height:180px; object-fit:cover;">
           <div class="programme-card-header" style="background: var(--dark);">
             <span class="badge mb-2" style="background:var(--gold); color:var(--dark);">Elite</span>
             <h3>Performance Track</h3>
@@ -135,9 +140,10 @@
         </div>
       </div>
 
-      <!-- Adult Social -->
+      <!-- adult social -->
       <div class="col-md-6 col-lg-4 reveal">
         <div class="programme-card">
+          <img src="images/gallery/coach-feeding.jpg" alt="Coach feeding balls during social session" style="width:100%; height:180px; object-fit:cover;">
           <div class="programme-card-header" style="background: #5c4a8a;">
             <span class="badge mb-2 bg-light text-dark">Social</span>
             <h3>Adult Social Tennis</h3>
@@ -159,9 +165,10 @@
         </div>
       </div>
 
-      <!-- Fitness Programme -->
+      <!-- fitness -->
       <div class="col-md-6 col-lg-4 reveal">
         <div class="programme-card">
+          <img src="images/gallery/gym-training.jpg" alt="Gym core training session" style="width:100%; height:180px; object-fit:cover;">
           <div class="programme-card-header" style="background: #c0392b;">
             <span class="badge mb-2 bg-light text-dark">Fitness</span>
             <h3>Tennis Fitness</h3>
@@ -183,9 +190,10 @@
         </div>
       </div>
 
-      <!-- Private Coaching -->
+      <!-- private coaching -->
       <div class="col-md-6 col-lg-4 reveal">
         <div class="programme-card">
+          <img src="images/gallery/match-tracking.jpg" alt="Player tracking ball during match" style="width:100%; height:180px; object-fit:cover;">
           <div class="programme-card-header" style="background: #7d6608;">
             <span class="badge mb-2 bg-light text-dark">1-on-1</span>
             <h3>Private Coaching</h3>
@@ -211,6 +219,7 @@
   </div>
 </section>
 
+<!-- footer -->
 <footer>
   <div class="container">
     <div class="row g-4">
