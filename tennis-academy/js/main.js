@@ -1,10 +1,8 @@
-// ============================================
-//  Ace Tennis Academy — main.js
-// ============================================
+// main.js — runs on every page
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // ── Active nav link ──
+  // highlight whichever nav link matches the current page
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.nav-link').forEach(link => {
     if (link.getAttribute('href') === currentPage) {
@@ -12,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // ── Dark Mode Toggle ──
+  // dark mode — saved in localStorage so it persists between pages
   const toggle = document.getElementById('darkModeToggle');
   const saved = localStorage.getItem('darkMode');
 
@@ -30,14 +28,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ── Contact Form Validation ──
+  // contact form validation
+  // using novalidate on the form so we can show our own error messages
   const form = document.getElementById('contactForm');
   if (form) {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
       let valid = true;
 
-      // Name
+      // name — at least 2 characters
       const name = document.getElementById('name');
       if (!name.value.trim() || name.value.trim().length < 2) {
         setInvalid(name, 'Please enter your full name.');
@@ -46,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setValid(name);
       }
 
-      // Email
+      // email — basic regex check
       const email = document.getElementById('email');
       const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailRe.test(email.value.trim())) {
@@ -56,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setValid(email);
       }
 
-      // Phone (optional but if filled, must be valid)
+      // phone is optional, but validate format if they typed something
       const phone = document.getElementById('phone');
       if (phone && phone.value.trim()) {
         const phoneRe = /^[+]?[\d\s\-()]{7,15}$/;
@@ -68,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
 
-      // Subject
+      // subject dropdown — can't leave it on the default empty option
       const subject = document.getElementById('subject');
       if (subject && !subject.value) {
         setInvalid(subject, 'Please select a subject.');
@@ -77,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setValid(subject);
       }
 
-      // Message
+      // message — needs to be at least 10 chars
       const message = document.getElementById('message');
       if (!message.value.trim() || message.value.trim().length < 10) {
         setInvalid(message, 'Message must be at least 10 characters.');
@@ -86,6 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setValid(message);
       }
 
+      // fake a 1.2s send delay since there's no backend
       if (valid) {
         const btn = form.querySelector('button[type="submit"]');
         btn.textContent = 'Sending…';
@@ -102,6 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // adds red border + error text below the field
   function setInvalid(el, msg) {
     el.classList.add('is-invalid');
     el.classList.remove('is-valid');
@@ -119,6 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
     el.classList.add('is-valid');
   }
 
+  // green banner that disappears after 5 seconds
   function showSuccessAlert() {
     const alert = document.createElement('div');
     alert.className = 'alert alert-success mt-3';
@@ -129,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => alert.remove(), 5000);
   }
 
-  // ── Live Search / Filter (coaching page) ──
+  // live search on coaching page — hides cards that don't match what you type
   const searchInput = document.getElementById('programmeSearch');
   if (searchInput) {
     searchInput.addEventListener('input', () => {
@@ -141,11 +143,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ── Gallery Filter ──
+  // gallery filter buttons — show/hide photos by category
   const filterBtns = document.querySelectorAll('[data-filter]');
   if (filterBtns.length) {
     filterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
+        // swap the active button styling
         filterBtns.forEach(b => b.classList.remove('active', 'btn-gold'));
         filterBtns.forEach(b => b.classList.add('btn-outline-gold'));
         btn.classList.add('active', 'btn-gold');
@@ -163,7 +166,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ── Scroll reveal (lightweight) ──
+  // scroll reveal — elements with class "reveal" fade in when you scroll to them
+  // using IntersectionObserver instead of a scroll listener (way better for performance)
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
