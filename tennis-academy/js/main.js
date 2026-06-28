@@ -1,8 +1,20 @@
-// main.js — runs on every page
+// ================================================================
+// main.js — Shared JavaScript for Ace Tennis Academy
+// Runs on every page via <script src="js/main.js"></script>
+//
+// Features:
+//   1. Active Navigation Highlighting — marks the current page's nav link
+//   2. Dark Mode Toggle — persists user preference via localStorage
+//   3. Contact Form Validation — custom client-side validation with styled errors
+//   4. Programme Search Filter — live text search on the coaching page
+//   5. Gallery Category Filter — show/hide photos by category on the gallery page
+//   6. Scroll Reveal Animation — fade-in elements as they enter the viewport
+// ================================================================
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // highlight whichever nav link matches the current page
+  // ── 1. Active Navigation Highlighting ──
+  // Extracts the current filename from the URL and adds .active class to the matching nav link
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.nav-link').forEach(link => {
     if (link.getAttribute('href') === currentPage) {
@@ -10,7 +22,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // dark mode — saved in localStorage so it persists between pages
+  // ── 2. Dark Mode Toggle ──
+  // Checks localStorage for saved preference and applies dark-mode class to body
+  // Click handler toggles the class and updates both button text and localStorage
   const toggle = document.getElementById('darkModeToggle');
   const saved = localStorage.getItem('darkMode');
 
@@ -28,15 +42,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // contact form validation
-  // using novalidate on the form so we can show our own error messages
+  // ── 3. Contact Form Validation (contact.html only) ──
+  // The form uses novalidate attribute to disable browser defaults
+  // Each field is validated individually with custom error messages
   const form = document.getElementById('contactForm');
   if (form) {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
       let valid = true;
 
-      // name — at least 2 characters
+      // Validate name field — must be at least 2 characters long
       const name = document.getElementById('name');
       if (!name.value.trim() || name.value.trim().length < 2) {
         setInvalid(name, 'Please enter your full name.');
@@ -45,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setValid(name);
       }
 
-      // email — basic regex check
+      // Validate email — must match basic email format (text@text.text)
       const email = document.getElementById('email');
       const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailRe.test(email.value.trim())) {
@@ -55,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setValid(email);
       }
 
-      // phone is optional, but validate format if they typed something
+      // Validate phone (optional) — if provided, must be 7-15 digits with optional +, spaces, dashes
       const phone = document.getElementById('phone');
       if (phone && phone.value.trim()) {
         const phoneRe = /^[+]?[\d\s\-()]{7,15}$/;
@@ -67,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
 
-      // subject dropdown — can't leave it on the default empty option
+      // Validate subject dropdown — must select an option (not the default empty one)
       const subject = document.getElementById('subject');
       if (subject && !subject.value) {
         setInvalid(subject, 'Please select a subject.');
@@ -76,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setValid(subject);
       }
 
-      // message — needs to be at least 10 chars
+      // Validate message textarea — must be at least 10 characters long
       const message = document.getElementById('message');
       if (!message.value.trim() || message.value.trim().length < 10) {
         setInvalid(message, 'Message must be at least 10 characters.');
@@ -85,7 +100,8 @@ document.addEventListener('DOMContentLoaded', () => {
         setValid(message);
       }
 
-      // fake a 1.2s send delay since there's no backend
+      // Simulate form submission — 1.2s delay since there's no backend server
+      // Shows "Sending..." on the button, then displays a success alert and resets the form
       if (valid) {
         const btn = form.querySelector('button[type="submit"]');
         btn.textContent = 'Sending…';
@@ -102,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // adds red border + error text below the field
+  // Helper: adds .is-invalid class (red border) and inserts error message text below the field
   function setInvalid(el, msg) {
     el.classList.add('is-invalid');
     el.classList.remove('is-valid');
@@ -120,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
     el.classList.add('is-valid');
   }
 
-  // green banner that disappears after 5 seconds
+  // Helper: creates a green Bootstrap success alert that auto-removes after 5 seconds
   function showSuccessAlert() {
     const alert = document.createElement('div');
     alert.className = 'alert alert-success mt-3';
@@ -131,7 +147,9 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => alert.remove(), 5000);
   }
 
-  // live search on coaching page — hides cards that don't match what you type
+  // ── 4. Programme Search Filter (coaching.html only) ──
+  // Listens for input on the search field and hides programme cards that don't match the query
+  // Comparison is case-insensitive and checks the full text content of each card
   const searchInput = document.getElementById('programmeSearch');
   if (searchInput) {
     searchInput.addEventListener('input', () => {
@@ -143,12 +161,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // gallery filter buttons — show/hide photos by category
+  // ── 5. Gallery Category Filter (gallery.html only) ──
+  // Filter buttons (All, Training, Tournament, Team) show/hide gallery items by data-category
+  // Active button gets filled gold style; inactive buttons get outline style
   const filterBtns = document.querySelectorAll('[data-filter]');
   if (filterBtns.length) {
     filterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
-        // swap the active button styling
+        // Swap active/outline classes on all filter buttons
         filterBtns.forEach(b => b.classList.remove('active', 'btn-gold'));
         filterBtns.forEach(b => b.classList.add('btn-outline-gold'));
         btn.classList.add('active', 'btn-gold');
@@ -166,8 +186,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // scroll reveal — elements with class "reveal" fade in when you scroll to them
-  // using IntersectionObserver instead of a scroll listener (way better for performance)
+  // ── 6. Scroll Reveal Animation ──
+  // Elements with class "reveal" start invisible and slide up + fade in when scrolled into view
+  // Uses IntersectionObserver API (more performant than scroll event listeners)
+  // Threshold 0.1 means the animation triggers when 10% of the element is visible
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {

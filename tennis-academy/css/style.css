@@ -1,13 +1,30 @@
 /* ================================================================
    style.css — All custom styles for Ace Tennis Academy
-   Organized by page. Works on top of Bootstrap 5.3.
+   Author: Simon Mnadhiri
+
+   This stylesheet works on top of Bootstrap 5.3 and contains all
+   custom styling for the 7-page tennis academy website.
+
+   Structure:
+     1. COMMON — Shared styles used across all pages
+        (variables, reset, typography, navbar, buttons, section
+         headings, feature cards, page hero, footer, dark mode, utilities)
+     2. HOME PAGE — Hero section, stats bar
+     3. ABOUT PAGE — (uses common components only)
+     4. COACHING PAGE — Programme cards
+     5. SCHEDULE PAGE — Timetable table, session badges
+     6. TOURNAMENT PAGE — Group tables, bracket stages, match cards
+     7. GALLERY PAGE — Gallery grid, gallery cards, lightbox
+     8. CONTACT PAGE — Contact form styling, info cards
    ================================================================ */
 
 
 /* ================================================================
-   COMMON (ALL PAGES)
-   Variables, reset, typography, navbar, buttons, section headings,
-   feature cards, page hero, footer, dark mode, utilities
+   1. COMMON (ALL PAGES)
+   CSS custom properties (variables), box-sizing reset, base typography,
+   navigation bar, button styles, reusable section headings,
+   feature cards, inner-page hero banner, footer, dark mode toggle,
+   and utility classes
    ================================================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap');
@@ -42,7 +59,7 @@ a { color: inherit; text-decoration: none; transition: color var(--transition); 
 
 img { max-width: 100%; display: block; }
 
-/* ── navbar ── */
+/* ── Navbar — dark background with gold accent border, sticky positioning ── */
 .navbar {
   background-color: var(--dark) !important;
   padding: 1rem 0;
@@ -80,7 +97,7 @@ img { max-width: 100%; display: block; }
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23E9C46A' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
-/* ── buttons ── */
+/* ── Buttons — gold filled and gold outline variants used for CTAs throughout the site ── */
 .btn-gold {
   background: var(--gold);
   color: var(--dark);
@@ -117,7 +134,7 @@ img { max-width: 100%; display: block; }
   color: var(--dark);
 }
 
-/* ── section headings ── */
+/* ── Section Headings — reusable eyebrow label, title, and gold divider bar ── */
 .section-eyebrow {
   display: block;
   font-size: 0.75rem;
@@ -142,7 +159,7 @@ img { max-width: 100%; display: block; }
   margin-bottom: 2rem;
 }
 
-/* ── feature cards ── */
+/* ── Feature Cards — white cards with border, hover lift effect, used across multiple pages ── */
 .card-feature {
   background: #fff;
   border: 1px solid #e8e8e8;
@@ -173,7 +190,7 @@ img { max-width: 100%; display: block; }
   color: var(--grey);
 }
 
-/* ── page hero (inner pages) ── */
+/* ── Page Hero — gradient banner used on all inner pages (About, Coaching, etc.) ── */
 .page-hero {
   background: linear-gradient(135deg, var(--dark) 0%, var(--green-dark) 100%);
   color: var(--white);
@@ -184,7 +201,7 @@ img { max-width: 100%; display: block; }
 .page-hero h1 { font-size: clamp(2.5rem, 6vw, 4rem); }
 .page-hero p { color: rgba(255,255,255,0.7); font-size: 1.05rem; }
 
-/* ── footer ── */
+/* ── Footer — dark background footer with navigation links and contact info ── */
 footer {
   background: var(--dark);
   color: rgba(255,255,255,0.7);
@@ -228,7 +245,7 @@ footer h6 {
   color: rgba(255,255,255,0.4);
 }
 
-/* ── dark mode ── */
+/* ── Dark Mode — toggled via JS, adds .dark-mode class to body, inverts key backgrounds ── */
 body.dark-mode {
   background: #0D1B2A;
   color: #e0e0e0;
@@ -258,7 +275,7 @@ body.dark-mode .card-feature p { color: #aaa; }
 
 #darkModeToggle:hover { border-color: var(--gold); color: var(--gold); }
 
-/* ── utilities ── */
+/* ── Utility Classes — background colours, text colours, and responsive section padding ── */
 .bg-green-dark { background-color: var(--green-dark) !important; }
 .bg-dark-custom { background-color: var(--dark) !important; }
 .text-gold { color: var(--gold) !important; }
@@ -272,11 +289,12 @@ section { padding: 80px 0; }
 
 
 /* ================================================================
-   HOME PAGE (index.html)
-   Hero section, stats bar
+   2. HOME PAGE (index.html)
+   Full-width hero with gradient background, CTA buttons, and
+   statistics bar showing key academy numbers
    ================================================================ */
 
-/* ── hero ── */
+/* ── Hero — main landing section with dark-to-green gradient and decorative glow circle ── */
 .hero {
   background: linear-gradient(135deg, var(--dark) 60%, var(--green-dark) 100%);
   color: var(--white);
@@ -331,7 +349,7 @@ section { padding: 80px 0; }
   opacity: 0.35;
 }
 
-/* ── stats bar ── */
+/* ── Stats Bar — green banner with 4 stat counters (members, coaches, players, years) ── */
 .stats-bar {
   background: var(--green-dark);
   color: var(--white);
@@ -362,14 +380,16 @@ section { padding: 80px 0; }
 
 
 /* ================================================================
-   ABOUT PAGE (about.html)
-   No page-specific styles — uses common components only
+   3. ABOUT PAGE (about.html)
+   No page-specific styles required — uses common components:
+   page hero, section headings, feature cards, and footer
    ================================================================ */
 
 
 /* ================================================================
-   COACHING PAGE (coaching.html)
-   Programme cards
+   4. COACHING PAGE (coaching.html)
+   Programme cards with coloured headers (green, mid-green, dark,
+   purple, red, gold) and white body sections containing feature lists
    ================================================================ */
 
 .programme-card {
@@ -404,8 +424,9 @@ section { padding: 80px 0; }
 
 
 /* ================================================================
-   SCHEDULE PAGE (schedule.html)
-   Schedule table, session badges
+   5. SCHEDULE PAGE (schedule.html)
+   Weekly timetable with colour-coded session badges and
+   responsive table wrapper for mobile scrolling
    ================================================================ */
 
 .schedule-table th {
@@ -434,8 +455,9 @@ section { padding: 80px 0; }
 
 
 /* ================================================================
-   TOURNAMENT PAGE (tournament.html)
-   Group tables, bracket stages, match cards
+   6. TOURNAMENT PAGE (tournament.html)
+   Group draw tables with dark headers, bracket stage headings
+   with gold underlines, and match result cards
    ================================================================ */
 
 .group-table th {
@@ -470,8 +492,9 @@ section { padding: 80px 0; }
 
 
 /* ================================================================
-   GALLERY PAGE (gallery.html)
-   Gallery grid, gallery cards, lightbox
+   7. GALLERY PAGE (gallery.html)
+   Responsive photo grid with hover zoom effect, category labels,
+   "View" overlay on hover, and full-screen lightbox modal
    ================================================================ */
 
 .gallery-grid {
@@ -545,7 +568,7 @@ section { padding: 80px 0; }
   font-size: 0.8rem; padding: 4px 8px; border-radius: 4px;
 }
 
-/* ── lightbox ── */
+/* ── Lightbox — full-screen dark overlay for viewing gallery images at full size ── */
 .lightbox {
   display: none; position: fixed; inset: 0; z-index: 9999;
   background: rgba(0,0,0,0.9);
@@ -564,8 +587,10 @@ section { padding: 80px 0; }
 
 
 /* ================================================================
-   CONTACT PAGE (contact.html)
-   Contact form, info cards
+   8. CONTACT PAGE (contact.html)
+   Contact form with custom validation styling (green border on valid,
+   red border on invalid), info cards with green background,
+   and form input focus states
    ================================================================ */
 
 .contact-section { background: var(--white); }

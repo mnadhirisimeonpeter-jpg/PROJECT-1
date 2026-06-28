@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Character encoding and responsive viewport meta tag -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ace Tennis Academy | Home</title>
-  <!-- bootstrap first, then our custom styles on top -->
+  <!-- Bootstrap 5.3 CSS framework for responsive grid and components -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <!-- Custom site-wide styles that override and extend Bootstrap defaults -->
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
-<!-- navbar — same markup on all 7 pages
-     sticky-top keeps it fixed while scrolling
-     navbar-expand-lg collapses to hamburger on mobile -->
+<!-- Navigation Bar
+     - Shared across all 7 pages with identical markup
+     - sticky-top: stays fixed at the top of the viewport while scrolling
+     - navbar-expand-lg: full horizontal menu on large screens, hamburger toggle on mobile
+     - Dark mode toggle button is included as the last nav item -->
 <nav class="navbar navbar-expand-lg sticky-top">
   <div class="container">
     <a class="navbar-brand" href="index.html">ACE <span>TENNIS</span></a>
@@ -36,9 +40,12 @@
   </div>
 </nav>
 
-<!-- hero — big landing section with gradient background
-     col-lg-7/5 splits content and the decorative emoji on desktop
-     the emoji column is hidden on mobile (d-none d-lg-block) -->
+<!-- Hero Section — Main landing area
+     - Full-width gradient background (dark to green)
+     - Two-column layout: text content (col-lg-7) and hero image (col-lg-5)
+     - Hero image column is hidden on mobile (d-none d-lg-block) for cleaner layout
+     - Contains primary CTA buttons linking to coaching and contact pages
+     - Decorative gold dashed court line at the bottom via .hero-court-line -->
 <section class="hero">
   <div class="container">
     <div class="row align-items-center">
@@ -59,7 +66,10 @@
   <div class="hero-court-line"></div>
 </section>
 
-<!-- stats — col-6 col-md-3 gives 2 columns on mobile, 4 on tablet+ -->
+<!-- Statistics Bar — Key academy numbers displayed in a green banner
+     - col-6 col-md-3: 2 columns on mobile, 4 columns on tablet and above
+     - Each stat uses "reveal" class for scroll-triggered fade-in animation (handled by main.js)
+     - Numbers are styled with Bebas Neue font and gold colour for visual impact -->
 <div class="stats-bar">
   <div class="container">
     <div class="row g-4 text-center">
@@ -83,8 +93,11 @@
   </div>
 </div>
 
-<!-- why ace — 4 feature cards in a row
-     "reveal" class triggers the scroll-in animation from main.js -->
+<!-- Why Choose Us Section — Four feature cards highlighting academy strengths
+     - Each card contains an image, heading, and description paragraph
+     - Uses Bootstrap grid: 2 columns on tablet (col-md-6), 4 on desktop (col-lg-3)
+     - "reveal" class on each card triggers the IntersectionObserver scroll animation in main.js
+     - Cards have hover effect: slight lift (translateY) and shadow via .card-feature CSS -->
 <section>
   <div class="container">
     <div class="text-center mb-5 reveal">
@@ -125,7 +138,11 @@
   </div>
 </section>
 
-<!-- programmes preview — shows 3 of the 6 programmes, links to full coaching page -->
+<!-- Programmes Preview Section — Showcases 3 of the 6 training programmes
+     - Light grey background (#f4f7f5) to visually separate from surrounding sections
+     - Three cards: Junior Starter (Beginner), Academy Squad (Intermediate), Performance Track (Elite)
+     - Each card has a badge indicating skill level and a "Learn more" link to coaching.html
+     - "View All Programmes" button links to the full coaching page for the remaining 3 programmes -->
 <section style="background: #f4f7f5;">
   <div class="container">
     <div class="row align-items-center mb-5">
@@ -170,7 +187,9 @@
   </div>
 </section>
 
-<!-- tournament call to action -->
+<!-- Tournament Call-to-Action Section — Promotes the Ace Open 2026 tournament
+     - Dark green background with centred text layout
+     - Links to the tournament.html page for full draw and details -->
 <section style="background: var(--green-dark); color: var(--white);">
   <div class="container text-center reveal">
     <span class="hero-tag mb-3 d-inline-block">Open Tournament 2026</span>
@@ -180,7 +199,11 @@
   </div>
 </section>
 
-<!-- footer — same on all pages -->
+<!-- Footer — Shared across all 7 pages
+     - Dark background with four columns: brand info, primary nav links, secondary nav links, contact details
+     - Uses Bootstrap grid: stacks on mobile, 4-column layout on large screens
+     - Gold-coloured headings and semi-transparent white text for readability
+     - Footer bottom bar contains copyright notice -->
 <footer>
   <div class="container">
     <div class="row g-4">
@@ -218,7 +241,9 @@
   </div>
 </footer>
 
+<!-- Bootstrap JS Bundle — includes Popper.js for dropdowns, tooltips, and navbar toggler -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Custom JS — handles dark mode toggle, active nav highlighting, scroll reveal animations -->
 <script src="js/main.js"></script>
 </body>
 </html>

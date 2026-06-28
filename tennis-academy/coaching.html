@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Character encoding and responsive viewport meta tag -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ace Tennis Academy | Coaching</title>
+  <!-- Bootstrap 5.3 CSS framework for responsive grid and components -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <!-- Custom site-wide styles that override and extend Bootstrap defaults -->
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
-<!-- navbar -->
+<!-- Navigation Bar — shared across all 7 pages (see index.html for full description) -->
 <nav class="navbar navbar-expand-lg sticky-top">
   <div class="container">
     <a class="navbar-brand" href="index.html">ACE <span>TENNIS</span></a>
@@ -39,7 +42,10 @@
   </div>
 </div>
 
-<!-- search bar — JS in main.js filters the programme cards as you type -->
+<!-- Live Search Bar — Filters programme cards in real time as the user types
+     - Input triggers the 'input' event listener in main.js
+     - JS hides any .programme-card whose text content doesn't match the search query
+     - Allows users to quickly find a specific programme by name or keyword -->
 <section style="padding: 40px 0 0;">
   <div class="container">
     <div class="row justify-content-center">
@@ -51,8 +57,12 @@
   </div>
 </section>
 
-<!-- programme cards — each one has a coloured header and white body
-     col-md-6 col-lg-4 = 1 col mobile, 2 tablet, 3 desktop -->
+<!-- Programme Cards Section — All 6 training programmes displayed in a card grid
+     - col-md-6 col-lg-4: 1 column on mobile, 2 on tablet, 3 on desktop
+     - Each card has: an image, a coloured header (varies by level), and a white body
+     - Body contains: description, feature list (ul), schedule info, and enrol/apply button
+     - Programmes: Junior Starter, Academy Squad, Performance Track,
+       Adult Social Tennis, Tennis Fitness, Private Coaching -->
 <section>
   <div class="container">
     <div class="text-center mb-5 reveal">
@@ -62,7 +72,7 @@
     </div>
     <div class="row g-4">
 
-      <!-- junior starter -->
+      <!-- Programme 1: Junior Starter — Beginner level, ages 8-14, 3x/week -->
       <div class="col-md-6 col-lg-4 reveal">
         <div class="programme-card">
           <img src="images/gallery/junior-forehand.jpg" alt="Junior player hitting a forehand" style="width:100%; height:180px; object-fit:cover;">
@@ -88,7 +98,7 @@
         </div>
       </div>
 
-      <!-- academy squad -->
+      <!-- Programme 2: Academy Squad — Intermediate level, ages 14-20, 4x/week -->
       <div class="col-md-6 col-lg-4 reveal">
         <div class="programme-card">
           <img src="images/gallery/backhand-feed.jpg" alt="Backhand from a fed ball in training" style="width:100%; height:180px; object-fit:cover;">
@@ -114,7 +124,7 @@
         </div>
       </div>
 
-      <!-- performance track -->
+      <!-- Programme 3: Performance Track — Elite level, adults & competitive juniors, 5x/week -->
       <div class="col-md-6 col-lg-4 reveal">
         <div class="programme-card">
           <img src="images/gallery/elite-movement.jpg" alt="Elite player explosive court movement" style="width:100%; height:180px; object-fit:cover;">
@@ -140,7 +150,7 @@
         </div>
       </div>
 
-      <!-- adult social -->
+      <!-- Programme 4: Adult Social Tennis — Casual/social level, adults 18+, 2x/week -->
       <div class="col-md-6 col-lg-4 reveal">
         <div class="programme-card">
           <img src="images/gallery/coach-feeding.jpg" alt="Coach feeding balls during social session" style="width:100%; height:180px; object-fit:cover;">
@@ -165,7 +175,7 @@
         </div>
       </div>
 
-      <!-- fitness -->
+      <!-- Programme 5: Tennis Fitness — All levels, body-weight circuits and cardio, 2x/week -->
       <div class="col-md-6 col-lg-4 reveal">
         <div class="programme-card">
           <img src="images/gallery/gym-training.jpg" alt="Gym core training session" style="width:100%; height:180px; object-fit:cover;">
@@ -190,7 +200,7 @@
         </div>
       </div>
 
-      <!-- private coaching -->
+      <!-- Programme 6: Private Coaching — 1-on-1 sessions, any level, flexible schedule -->
       <div class="col-md-6 col-lg-4 reveal">
         <div class="programme-card">
           <img src="images/gallery/match-tracking.jpg" alt="Player tracking ball during match" style="width:100%; height:180px; object-fit:cover;">
@@ -219,7 +229,7 @@
   </div>
 </section>
 
-<!-- footer -->
+<!-- Footer — shared across all 7 pages (see index.html for full description) -->
 <footer>
   <div class="container">
     <div class="row g-4">
@@ -253,7 +263,9 @@
   </div>
 </footer>
 
+<!-- Bootstrap JS Bundle — includes Popper.js for dropdowns and navbar toggler -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Custom JS — handles dark mode, active nav, programme search filter, scroll reveal -->
 <script src="js/main.js"></script>
 </body>
 </html>
